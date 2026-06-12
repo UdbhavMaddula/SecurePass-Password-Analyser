@@ -104,6 +104,11 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
+st.image(
+    "https://img.icons8.com/fluency/96/lock-2.png",
+    width=80
+)
+
 
 st.title("SecurePass")
 st.subheader("Password Security Assessment Tool")
@@ -384,4 +389,13 @@ st.divider()
 
 st.caption(
     "Developed by Udbhav | SecurePass Password Security Assessment Tool"
+)
+
+st.link_button(
+    "View Source Code",
+    "https://github.com/UdbhavMaddula/SecurePass-Password-Analyser"
+)
+
+st.caption(
+    "Passwords entered are analyzed locally and are not stored."
 )
