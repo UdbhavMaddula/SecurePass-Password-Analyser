@@ -369,6 +369,7 @@ if password:
     st.table(checklist)
 
     st.subheader("Suggestions")
+    st.subheader("Suggestions")
 
     if recommendations:
         seen = set()
@@ -378,37 +379,40 @@ if password:
                 st.write(f"• {recommendation}")
     else:
         st.success("Excellent password practices.")
-        st.subheader("Attack Awareness")
 
-st.write(
-    f"Potential Attacks: {', '.join(attack_risks)}"
-)
+    st.subheader("Attack Awareness")
 
-st.write(
-    "Avoid predictable information and use unique passwords."
-)
-
-name_pattern = re.match(
-    r"^[A-Za-z]{3,}[-_][A-Za-z]{3,}$",
-    password
-)
-
-if name_pattern:
-    st.markdown("### Educational Insight")
-    st.info(
-        "Passwords resembling names or personal identifiers may be easier to guess through social engineering attacks. "
-        "If this password is based on personal information, consider using a unique passphrase instead."
+    st.write(
+        f"Potential Attacks: {', '.join(attack_risks)}"
     )
 
-st.subheader("Security Best Practice")
+    st.write(
+        "Avoid predictable information and use unique passwords."
+    )
 
-st.info(random.choice(cyber_tips))   
+    name_pattern = re.match(
+        r"^[A-Za-z]{3,}[-_][A-Za-z]{3,}$",
+        password
+    )
+
+    if name_pattern:
+        st.markdown("### Educational Insight")
+
+        st.info(
+            "Passwords resembling names or personal identifiers may be easier to guess through social engineering attacks. "
+            "If this password is based on personal information, consider using a unique passphrase instead."
+        )
+
+    st.subheader("Security Best Practice")
+
+    st.info(
+        random.choice(cyber_tips)
+    )
 
 else:
     st.info(
         "Enter a password to begin analysis."
     )
-
 st.divider()
 
 st.caption(
