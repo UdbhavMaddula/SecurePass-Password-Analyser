@@ -236,7 +236,7 @@ if password:
         penalties += 20
         attack_risks.append("Sequential Pattern Attack")
 
-    # Penalize "word + simple digits" pattern (e.g. name123, password1)
+    
     word_then_digits = re.match(r"^[a-zA-Z]{3,}\d{1,4}$", password)
     if word_then_digits:
         penalties += 20
@@ -253,7 +253,7 @@ if password:
 
     security_score -= penalties
 
-    # Hard cap: short passwords can't be rated highly, regardless of zxcvbn score
+    
     if len(password) < 10:
         security_score = min(security_score, 50)
     elif len(password) < 12:
@@ -381,19 +381,33 @@ if password:
 
     st.subheader("Attack Awareness")
 
-    st.write(
-        f"Potential Attacks: {', '.join(attack_risks)}"
-    )
+st.write(
+    f"Potential Attacks: {', '.join(attack_risks)}"
+)
 
-    st.write(
-        "Avoid predictable information and use unique passwords."
-    )
+st.write(
+    "Avoid predictable information and use unique passwords."
+)
 
-    st.subheader("Security Best Practice")
+
+name_pattern = re.match(
+    r"^[a-zA-Z]{3,}[-_][a-zA-Z]{3,}$",
+    password
+)
+
+if name_pattern:
+    st.markdown("### Educational Insight")
 
     st.info(
-        random.choice(cyber_tips)
+        "Passwords resembling names or personal identifiers may be easier to guess through social engineering attacks. "
+        "If this password is based on personal information, consider using a unique passphrase instead."
     )
+
+st.subheader("Security Best Practice")
+
+st.info(
+    random.choice(cyber_tips)
+)
 
 else:
     st.info(
