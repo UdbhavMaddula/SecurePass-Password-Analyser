@@ -25,18 +25,33 @@ st.markdown("""
     }
 
     /* Title */
-    h1 {
-        font-weight: 700;
-        color: #1A1D29;
-        letter-spacing: -0.5px;
-    }
+h1 {
+    color: #0F172A;
+    font-weight: 700;
+}
 
-    /* Subheaders */
-    h2, h3 {
-        color: #2E323F;
-        font-weight: 600;
-        margin-top: 1.5rem;
-    }
+/* Subheaders */
+h2, h3 {
+    color: #1E293B;
+    font-weight: 600;
+    margin-top: 1.5rem;
+}
+
+/* Body text */
+p, label {
+    color: #334155;
+}
+
+/* Footer */
+.stCaption,
+[data-testid="stCaptionContainer"] {
+    color: #475569;
+}
+
+/* Placeholder */
+.stTextInput input::placeholder {
+    color: #64748B;
+}
 
     /* Input fields */
     .stTextInput input {
