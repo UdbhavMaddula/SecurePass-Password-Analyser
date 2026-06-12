@@ -378,8 +378,7 @@ if password:
                 st.write(f"• {recommendation}")
     else:
         st.success("Excellent password practices.")
-
-    st.subheader("Attack Awareness")
+        st.subheader("Attack Awareness")
 
 st.write(
     f"Potential Attacks: {', '.join(attack_risks)}"
@@ -389,15 +388,13 @@ st.write(
     "Avoid predictable information and use unique passwords."
 )
 
-
 name_pattern = re.match(
-    r"^[a-zA-Z]{3,}[-_][a-zA-Z]{3,}$",
+    r"^[A-Za-z]{3,}[-_][A-Za-z]{3,}$",
     password
 )
 
 if name_pattern:
     st.markdown("### Educational Insight")
-
     st.info(
         "Passwords resembling names or personal identifiers may be easier to guess through social engineering attacks. "
         "If this password is based on personal information, consider using a unique passphrase instead."
@@ -405,9 +402,7 @@ if name_pattern:
 
 st.subheader("Security Best Practice")
 
-st.info(
-    random.choice(cyber_tips)
-)
+st.info(random.choice(cyber_tips))   
 
 else:
     st.info(
