@@ -369,7 +369,7 @@ if password:
     st.table(checklist)
 
     st.subheader("Suggestions")
-    st.subheader("Suggestions")
+    
 
     if recommendations:
         seen = set()
